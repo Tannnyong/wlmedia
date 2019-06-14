@@ -1,5 +1,6 @@
 # wlmedia
-android 音视频播放SDK，几句代码即可实现音视频播放功能(支持：http、https、rtsp、rtp、rtmp、byte[]和各种文件格式)~
+android 音视频播放SDK，几句代码即可实现音视频播放功能~
+#### 支持：http、https、rtsp、rtp、rtmp、byte[]、各种文件格式等。
 
 ## [我的视频课程（基础）：《（NDK）FFmpeg打造Android万能音频播放器》](https://edu.csdn.net/course/detail/6842)
 ## [我的视频课程（进阶）：《（NDK）FFmpeg打造Android视频播放器》](https://edu.csdn.net/course/detail/8036)
