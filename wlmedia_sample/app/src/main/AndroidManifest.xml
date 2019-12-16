@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".WlMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,14 +20,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".PlayAudioActivity"
+        <activity android:name=".WlNormalPlayerActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
-        <activity android:name=".PlayVideoActivity"
+        <activity android:name=".WlEncryptActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
-        <activity android:name=".PlayVideoBufferActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
+        <activity android:name=".WlBufferActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".WlAudioActivity"
             android:screenOrientation="portrait"/>
 
     </application>
