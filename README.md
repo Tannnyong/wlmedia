@@ -14,9 +14,7 @@ android 音视频播放SDK，几句代码即可实现音视频播放功能~
 
 ## 2、实例图片
 
-### 播放视频
-<img width="360" height="640" src="https://github.com/wanliyang1990/wlmedia/blob/master/img/list.png"/>
-<img width="360" height="640" src="https://github.com/wanliyang1990/wlmedia/blob/master/img/demo.png"/>
+<img width="360" height="640" src="https://github.com/wanliyang1990/wlmedia/blob/master/img/wlmedia.gif"/>
 
 
 ## 3、调用方式
