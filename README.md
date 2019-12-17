@@ -23,7 +23,7 @@ android 音视频播放SDK，几句代码即可实现音视频播放功能~
 ### 配置NDK编译平台:
 
     defaultConfig {
-		...
+    	...
 		ndk {
 		    abiFilter("arm64-v8a")
 		    abiFilter("armeabi-v7a")
@@ -52,7 +52,9 @@ android 音视频播放SDK，几句代码即可实现音视频播放功能~
     <com.ywl5320.wlmedia.surface.WlTextureView
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+        
 #### 4.2、创建播放器
+
 ##### 4.2.1 播放视频
 	
 	WlMedia wlMedia = new WlMedia();
@@ -84,6 +86,19 @@ android 音视频播放SDK，几句代码即可实现音视频播放功能~
                 wlMedia.seek(value);//seek
             }
         });
+    //自定义滤镜方式
+    String fs = "precision mediump float;" +
+                "varying vec2 ft_Position;" +
+                "uniform sampler2D sTexture; " +
+                "void main() " +
+                "{ " +
+                "vec4 v=texture2D(sTexture, ft_Position); " +
+                "float average = (v.r + v.g + v.b) / 3.0;" +
+                "gl_FragColor = vec4(average, average, average, v.a);" +
+                "}";
+    wlMedia.setfShader(fs);
+    wlMedia.changeFilter();
+    
 ##### 4.2.2 播放音频
     WlMedia wlMedia = new WlMedia();
     wlMedia.setPlayModel(WlPlayModel.PLAYMODEL_ONLY_AUDIO);//设置只播放音频（必须）
