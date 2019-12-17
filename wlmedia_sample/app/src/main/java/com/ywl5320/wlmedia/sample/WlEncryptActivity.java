@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.ywl5320.wlmedia.WlMedia;
+import com.ywl5320.wlmedia.enums.WlPlayModel;
 import com.ywl5320.wlmedia.listener.WlOnCompleteListener;
 import com.ywl5320.wlmedia.listener.WlOnDecryptListener;
 import com.ywl5320.wlmedia.listener.WlOnErrorListener;
@@ -31,6 +32,7 @@ public class WlEncryptActivity extends AppCompatActivity {
         wlSurfaceView = findViewById(R.id.wlsurfaceview);
 
         wlMedia = new WlMedia();
+        wlMedia.setPlayModel(WlPlayModel.PLAYMODEL_AUDIO_VIDEO);
         wlSurfaceView.setWlMedia(wlMedia);
         wlMedia.setBufferSource(true, true);
         wlMedia.setOnDecryptListener(new WlOnDecryptListener() {

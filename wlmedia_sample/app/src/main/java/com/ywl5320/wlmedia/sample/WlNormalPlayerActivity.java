@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.ywl5320.wlmedia.WlMedia;
 import com.ywl5320.wlmedia.enums.WlCodecType;
 import com.ywl5320.wlmedia.enums.WlMute;
+import com.ywl5320.wlmedia.enums.WlPlayModel;
 import com.ywl5320.wlmedia.listener.WlOnCompleteListener;
 import com.ywl5320.wlmedia.listener.WlOnErrorListener;
 import com.ywl5320.wlmedia.listener.WlOnLoadListener;
@@ -65,7 +66,7 @@ public class WlNormalPlayerActivity extends AppCompatActivity {
         wlMedia = new WlMedia();
         wlMedia.setCodecType(WlCodecType.CODEC_MEDIACODEC);
         wlSurfaceView.setWlMedia(wlMedia);
-//        wlMedia.setPlayModel(WlPlayModel.PLAYMODEL_ONLY_VIDEO);
+        wlMedia.setPlayModel(WlPlayModel.PLAYMODEL_AUDIO_VIDEO);
         wlMedia.setVolume(100);
         tvVolume.setText("音量：" + wlMedia.getVolume() + "%");
         seekBar.setProgress(wlMedia.getVolume());

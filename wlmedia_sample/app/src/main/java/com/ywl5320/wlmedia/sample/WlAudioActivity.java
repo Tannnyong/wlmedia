@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.ywl5320.wlmedia.WlMedia;
+import com.ywl5320.wlmedia.enums.WlPlayModel;
 import com.ywl5320.wlmedia.listener.WlOnCompleteListener;
 import com.ywl5320.wlmedia.listener.WlOnPreparedListener;
 import com.ywl5320.wlmedia.listener.WlOnTimeInfoListener;
@@ -24,6 +25,7 @@ public class WlAudioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_audio_layout);
         tvTime = findViewById(R.id.tv_time);
         wlMedia = new WlMedia();
+        wlMedia.setPlayModel(WlPlayModel.PLAYMODEL_ONLY_AUDIO);
         wlMedia.setSource(WlAssetsUtil.getAssetsFilePath(this, "mydream.m4a"));
         wlMedia.setOnPreparedListener(new WlOnPreparedListener() {
             @Override

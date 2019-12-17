@@ -6,6 +6,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.ywl5320.wlmedia.WlMedia;
+import com.ywl5320.wlmedia.enums.WlPlayModel;
 import com.ywl5320.wlmedia.listener.WlOnCompleteListener;
 import com.ywl5320.wlmedia.listener.WlOnPreparedListener;
 import com.ywl5320.wlmedia.listener.WlOnVideoViewListener;
@@ -30,6 +31,7 @@ public class WlBufferActivity extends AppCompatActivity {
         wlTextureView = findViewById(R.id.wltextureveiw);
         wlMedia = new WlMedia();
         wlMedia.setBufferSource(true, false);
+        wlMedia.setPlayModel(WlPlayModel.PLAYMODEL_ONLY_VIDEO);
         wlTextureView.setWlMedia(wlMedia);
 
         wlMedia.setOnPreparedListener(new WlOnPreparedListener() {
