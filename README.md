@@ -23,7 +23,7 @@ android 音视频播放SDK，几句代码即可实现音视频播放功能~
 ### 配置NDK编译平台:
 
     defaultConfig {
-    	...
+        ...
 		ndk {
 		    abiFilter("arm64-v8a")
 		    abiFilter("armeabi-v7a")
@@ -234,8 +234,127 @@ android 音视频播放SDK，几句代码即可实现音视频播放功能~
 
 	
 	
-## 5、其他API
-	请参考demo实例
+## 5、API
+
+#### 5.1 播放器API
+    
+    public WlMedia();//构造函数，不依赖上下文
+    
+    public void setSource(String source);//设置数据源（可以是file、url）
+    
+    public void setPlayModel(WlPlayModel playModel);//设置音视频播放模式（可以独立播放音频和视频或者同时播放音视频，默认同时播放音视频）
+    
+    public void setCodecType(WlCodecType codecType);//设置解码器类型（默认优先使用硬解码）
+    
+    public void prepared();异步开始准备播放，成功后会回调WlOnPreparedListener接口
+    
+    public void next();//切歌（数据源设置方法为：setSource）
+    
+    public void start();//开始播放（当异步准备完成后，在WlOnPreparedListener回调里面开始播放）
+    
+    public void pause();//播放暂停
+    
+    public void resume();//暂停后恢复播放
+    
+    public boolean isPlay();//判断是否在播放中
+    
+    public void setMute(WlMute mute);//设置声道（立体声、左声道、右声道）
+    
+    public void setVolume(int percent);//设置声音（0~100）
+    
+    public void setSpeed(float speed);//设置播放速度（0.5f~2f）
+    
+    public void setPitch(float pitch);//设置播放音调（0.5f~2f）
+    
+    public void seek(double secds);//seek 目前是到关键帧（实测精确到时间帧，体验不好，平均等待时间过长，故弃之）
+    
+    public void setSampleRate(WlSampleRate wlSampleRate);//设置音频采样率（用于回调pcm时需要制定采样率情况）
+    
+    public void setShowPcm(boolean showPcm);//设置是否回调pcm音频数据，回调方法：WlOnPcmDataListener
+    
+    public double getNowClock();//获取当前播放时间
+    
+    public double getDuration();//获取时长（如果有在异步准备好后可获取）
+    
+    public void takePicture();//视频截图（是截取surface屏幕图片，自己可根据surface大小和视频宽高对视频图片进行裁剪），回调方法：WlOnTakePictureListener
+    
+    public int putBufferSource(byte[] buffer, int buffer_len);//byte[]方式播放数据入口，返回值为底层队列大小，当buffer_len == 0时，也返回底层队列大小。
+    
+    public void seekNoCallTime();//设置不回调时间，可用于seek过程中UI展示（具体看自己的需求）
+    
+    public void onSurfaceCreate(Surface surface);//设置surface（用于自定义surfaceview）
+    
+    public void onSurfaceChange(int width, int height, Surface surface);//surface大小改变
+    
+    public void onSurfaceDestroy();//surface销毁
+    
+    public void release();//回收surface底层opengl资源
+    
+    public void setTransportModel(WlTransportModel transportModel);//设置播放rtsp的方式（UDP/TCP）
+    
+    public void setClearLastPicture(boolean clearLastPicture);//视频播放完最后一帧是否清屏，true:停留在最后一帧;false:清屏为黑色
+    
+    /**
+     * 设置数据源模式
+     * 1、bufferSource为true，encryptFileSource为false时，是byte[]模式
+     * 2、bufferSource为true，encryptFileSource为true时，是file模式，可用于加密视频播放，（回WlOnDecryptListener调里面自己解密）
+     * @param bufferSource byte[]模式
+     * @param encryptFileSource 是否加密
+     */
+    public void setBufferSource(boolean bufferSource, boolean encryptFileSource);
+    
+    public void setvShader(String vShader);//设置顶点着色器
+    
+    public void setfShader(String fShader);//设置纹理着色器
+    
+    public void changeFilter();//设置着色器后用于使之生效（切换滤镜）
+    
+    public void scaleVideo(int w, int h);//设置视频宽高比
+    
+    public int getVideoWidth();//获取视频宽
+    
+    public int getVideoHeight();//获取视频高
+    
+    public String[] getAudioChannels();//获取所有音轨，返回音轨名字（默认为Audio）
+    
+    public void setAudioChannel(int index);//设置播放音轨，index为getAudioChannels中得到音轨的索引
+    
+#### 5.2 WlSurfaceView和WlTextureView
+    SDK自带这2个自定义surfaceview，通过setWlMedia方法与播放器关联，updateMedia方法用于播放中切换显示surface；WlOnVideoViewListener为surface初始化完成回调。
+    开发者可以根据自己情况自定义自己的surfaceview，实现自己的特殊需求。
+    
+    
+    ***注：***
+    自定义surface必须调用方法：
+    
+    public void onSurfaceCreate(Surface surface);
+    
+    public void onSurfaceChange(int width, int height, Surface surface);
+    
+    public void onSurfaceDestroy();
+    
+    
+#### 5.3 回调函数
+    public interface WlOnPreparedListener; //异步准备完成回调
+    
+    public interface WlOnTimeInfoListener; //播放时间回调
+    
+    public interface WlOnLoadListener; //加载状态回调
+    
+    public interface WlOnErrorListener; //错误回调
+    
+    public interface WlOnCompleteListener; //播放（资源回收）完成回调
+    
+    public interface WlOnDecryptListener; //解密算法回调
+    
+    public interface WlOnPcmDataListener; //音频PCM数据回调
+    
+    public interface WlOnTakePictureListener; //截图回调
+    
+    public interface WlOnVideoViewListener; //surface 初始化完成回调
+    
+    
+    
 
 ## 6、参考资料
 
