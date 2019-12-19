@@ -356,9 +356,10 @@ android 音视频播放SDK，几句代码即可实现音视频播放功能~
     public interface WlOnVideoViewListener; //surface 初始化完成回调
     
     
-    
+## 6、混淆
+    -keep class com.ywl5320.wlmedia.* {*;} 
 
-## 6、参考资料
+## 7、参考资料
 
 ### [我的视频课程（基础）：《（NDK）FFmpeg打造Android万能音频播放器》](https://edu.csdn.net/course/detail/6842)
 ### [我的视频课程（进阶）：《（NDK）FFmpeg打造Android视频播放器》](https://edu.csdn.net/course/detail/8036)
