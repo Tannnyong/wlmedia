@@ -361,6 +361,7 @@ android 音视频播放SDK，几句代码即可实现音视频播放功能~
 	
 ## 7、注意事项
 	播放器activity配置：
+	
 	android:configChanges="orientation|keyboardHidden|screenSize"
 	android:launchMode="singleTask"
 
