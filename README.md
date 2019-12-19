@@ -7,9 +7,9 @@ android 音视频播放SDK，几句代码即可实现音视频播放功能~
 
 ## 1、Usage
 
-### Gradle: [ ![Download](https://api.bintray.com/packages/ywl5320/maven/wlmedia/images/download.svg?version=1.0.2) ](https://bintray.com/ywl5320/maven/wlmedia/1.0.2/link)
+### Gradle: [ ![Download](https://api.bintray.com/packages/ywl5320/maven/wlmedia/images/download.svg?version=1.0.3) ](https://bintray.com/ywl5320/maven/wlmedia/1.0.3/link)
 
-    implementation 'ywl.ywl5320:wlmedia:1.0.2'
+    implementation 'ywl.ywl5320:wlmedia:1.0.3'
 
 
 ## 2、实例图片
@@ -358,8 +358,13 @@ android 音视频播放SDK，几句代码即可实现音视频播放功能~
     
 ## 6、混淆
     -keep class com.ywl5320.wlmedia.* {*;} 
+	
+## 7、注意事项
+	播放器activity配置：
+	android:configChanges="orientation|keyboardHidden|screenSize"
+	android:launchMode="singleTask"
 
-## 7、参考资料
+## 8、参考资料
 
 ### [我的视频课程（基础）：《（NDK）FFmpeg打造Android万能音频播放器》](https://edu.csdn.net/course/detail/6842)
 ### [我的视频课程（进阶）：《（NDK）FFmpeg打造Android视频播放器》](https://edu.csdn.net/course/detail/8036)

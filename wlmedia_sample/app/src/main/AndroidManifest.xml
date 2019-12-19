@@ -24,13 +24,19 @@
 
         <activity android:name=".WlNormalPlayerActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
         <activity android:name=".WlEncryptActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
         <activity android:name=".WlBufferActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
         <activity android:name=".WlAudioActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
 
     </application>
