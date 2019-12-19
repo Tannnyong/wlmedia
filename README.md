@@ -360,10 +360,14 @@ android 音视频播放SDK，几句代码即可实现音视频播放功能~
     -keep class com.ywl5320.wlmedia.* {*;} 
 	
 ## 7、注意事项
-	播放器activity配置：
+#### 7.1播放器activity配置：
 	
 	android:configChanges="orientation|keyboardHidden|screenSize"
-	android:launchMode="singleTask"
+	android:launchMode="singleTask"//(建议)
+	
+#### 7.2播放器生命周期逻辑
+	播放器结束有2个回调：error和complete，二者只可能回调其中一个，所以回收回收资源可以在这个2个回调里面进行。
+	如：activity：back->stop->error/complete->release->finish
 
 ## 8、参考资料
 
