@@ -41,6 +41,6 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-//    implementation 'ywl.ywl5320:wlmedia:1.0.2'
-    implementation(name: 'wlmedia-1.0.2', ext: 'aar')
+    implementation 'ywl.ywl5320:wlmedia:1.0.3'
+//    implementation(name: 'wlmedia-1.0.3', ext: 'aar')
 }
