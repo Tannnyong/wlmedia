@@ -3,6 +3,7 @@ android 音视频播放SDK，几句代码即可实现音视频播放功能~
 #### 功能
 ##### **支持：http、https、rtsp、rtp、rtmp、byte[]、加密视频和各种文件格式视频；
 ##### **截图、音轨选择、自定义视频滤镜、变速变调、声道切换、无缝切换surface（surfaceview和textureview）、视频比例设置等；
+##### **目前包含全部FFmpeg音视频解码器，故SDK包比较大；如需定制大小，可联系我~（Email：ywl5320@163.com）
 
 
 ## 1、Usage
