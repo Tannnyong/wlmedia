@@ -8,15 +8,16 @@ android 音视频播放SDK，几句代码即可实现音视频播放功能~
 
 ## 1、Usage
 
-### Gradle: [ ![Download](https://api.bintray.com/packages/ywl5320/maven/wlmedia/images/download.svg?version=1.0.3) ](https://bintray.com/ywl5320/maven/wlmedia/1.0.3/link)
+### Gradle: [ ![Download](https://api.bintray.com/packages/ywl5320/maven/wlmedia/images/download.svg?version=1.0.4) ](https://bintray.com/ywl5320/maven/wlmedia/1.0.4/link)
 
-    implementation 'ywl.ywl5320:wlmedia:1.0.3'
+    implementation 'ywl.ywl5320:wlmedia:1.0.4'
 
 
 ## 2、实例图片
 
 <img width="360" height="640" src="https://github.com/wanliyang1990/wlmedia/blob/master/img/wlmedia.gif"/><br/>
-<img width="360" height="640" src="https://github.com/wanliyang1990/wlmedia/blob/master/img/demo.png"/>
+<img width="360" height="640" src="https://github.com/wanliyang1990/wlmedia/blob/master/img/demo.png"/><br/>
+<img width="360" height="640" src="https://github.com/wanliyang1990/wlmedia/blob/master/img/video_pic.png"/>
 
 
 ## 3、调用方式
@@ -230,6 +231,10 @@ android 音视频播放SDK，几句代码即可实现音视频播放功能~
 
         }
     });
+	
+##### 4.2.5 获取视频图片（类似于缩略图）
+	WlMediaUtil wlMediaUtil = new WlMediaUtil();//可以用单利模式，自己封装图片加载库
+	Bitmap bitmap = wlMediaUtil.getVideoPic(url);
     
 
 
@@ -369,6 +374,11 @@ android 音视频播放SDK，几句代码即可实现音视频播放功能~
 #### 7.2播放器生命周期逻辑
 	播放器结束有2个回调：error和complete，二者只可能回调其中一个，所以回收回收资源可以在这个2个回调里面进行。
 	如：activity：back->stop->error/complete->release->finish
+#### 7.3高本版系统后台播放音频卡顿问题
+	建议在新的进程中播放音频，比如：
+	<service android:name=".AudioService"
+            android:process=":wlmedia"/>
+	
 
 ## 8、参考资料
 
