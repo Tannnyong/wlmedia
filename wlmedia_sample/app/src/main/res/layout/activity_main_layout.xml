@@ -35,7 +35,11 @@
                 android:layout_height="45dp"
                 android:text="只播放音频"
                 android:onClick="play_audio"/>
-
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="获取视频图片"
+                android:onClick="get_video_pic"/>
         </LinearLayout>
     </ScrollView>
 

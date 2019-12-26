@@ -39,4 +39,9 @@ public class WlMainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, WlAudioActivity.class);
         startActivity(intent);
     }
+
+    public void get_video_pic(View view) {
+        Intent intent = new Intent(this, WlGetVideoPicActivity.class);
+        startActivity(intent);
+    }
 }

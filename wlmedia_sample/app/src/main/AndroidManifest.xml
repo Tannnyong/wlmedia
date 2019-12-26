@@ -38,6 +38,8 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
+        <activity android:name=".WlGetVideoPicActivity"
+            android:screenOrientation="portrait"/>
 
     </application>
 
