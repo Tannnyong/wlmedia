@@ -366,15 +366,15 @@ android 音视频播放SDK，几句代码即可实现音视频播放功能~
     -keep class com.ywl5320.wlmedia.* {*;} 
 	
 ## 7、注意事项
-#### 7.1播放器activity配置：
+#### 7.1 播放器activity配置：
 	
 	android:configChanges="orientation|keyboardHidden|screenSize"
 	android:launchMode="singleTask"//(建议)
 	
-#### 7.2播放器生命周期逻辑
+#### 7.2 播放器生命周期逻辑
 	播放器结束有2个回调：error和complete，二者只可能回调其中一个，所以回收回收资源可以在这个2个回调里面进行。
 	如：activity：back->stop->error/complete->release->finish
-#### 7.3高本版系统后台播放音频卡顿问题
+#### 7.3 高本版系统后台播放音频卡顿问题
 	建议在新的进程中播放音频，比如：
 	<service android:name=".AudioService"
             android:process=":wlmedia"/>
