@@ -382,8 +382,10 @@ android 音视频播放SDK，几句代码即可实现音视频播放功能~
         绑定服务
 	bindService(intent,serviceConnection,BIND_WAIVE_PRIORITY);//注意第三个参数BIND_WAIVE_PRIORITY
 	
+## 8、使用本库APP
+		
 
-## 8、参考资料
+## 9、参考资料
 
 ### [我的视频课程（基础）：《（NDK）FFmpeg打造Android万能音频播放器》](https://edu.csdn.net/course/detail/6842)
 ### [我的视频课程（进阶）：《（NDK）FFmpeg打造Android视频播放器》](https://edu.csdn.net/course/detail/8036)
