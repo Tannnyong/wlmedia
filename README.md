@@ -385,7 +385,6 @@ android 音视频播放SDK，几句代码即可实现音视频播放功能~
 ## 8、使用本库APP
 [<img width="100" height="100" src="https://github.com/wanliyang1990/wlmedia/blob/master/img/app_huisheng.png" alt="荟声"/>](http://app.mi.com/details?id=com.vada.huisheng "荟声")
 [<img width="100" height="100" src="https://github.com/wanliyang1990/wlmedia/blob/master/img/app_ruixin.png" alt="睿芯智能"/>](http://app.mi.com/details?id=com.zhituan.ruixin "睿芯智能")
-|name|title|
 
 ## 9、参考资料
 
