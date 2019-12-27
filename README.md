@@ -383,7 +383,7 @@ android 音视频播放SDK，几句代码即可实现音视频播放功能~
 	bindService(intent,serviceConnection,BIND_WAIVE_PRIORITY);//注意第三个参数BIND_WAIVE_PRIORITY
 	
 ## 8、使用本库APP
-[<img width="144" height="144" src="https://github.com/wanliyang1990/wlmedia/blob/master/img/app_huisheng.png" title="荟声"/>](http://app.mi.com/details?id=com.vada.huisheng)
+[<img width="144" height="144" src="https://github.com/wanliyang1990/wlmedia/blob/master/img/app_huisheng.png"/>](http://app.mi.com/details?id=com.vada.huisheng)
 [<img width="144" height="144" src="https://github.com/wanliyang1990/wlmedia/blob/master/img/app_ruixin.png"/>](http://app.mi.com/details?id=com.zhituan.ruixin)
 
 ## 9、参考资料
