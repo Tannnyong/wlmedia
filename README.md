@@ -378,6 +378,9 @@ android 音视频播放SDK，几句代码即可实现音视频播放功能~
 	建议在新的进程中播放音频，比如：
 	<service android:name=".AudioService"
             android:process=":wlmedia"/>
+	    
+        绑定服务
+	bindService(intent,serviceConnection,BIND_WAIVE_PRIORITY);//注意第三个参数BIND_WAIVE_PRIORITY
 	
 
 ## 8、参考资料
